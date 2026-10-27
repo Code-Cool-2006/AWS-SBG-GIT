@@ -1,0 +1,318 @@
+.gallery {
+  --gallery-orange: #ff9900;
+  /* --gallery-bg: #080b10; */
+  --gallery-bg: #0a1628;
+
+  position: relative;
+  overflow: hidden;
+  padding: 70px 0 64px;
+  background-color: var(--gallery-bg);
+  background-image:
+    linear-gradient(#ffffff05 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff05 1px, transparent 1px);
+  background-size: 52px 52px;
+  color: #f5f5f5;
+}
+
+
+
+.gallery__container {
+  width: min(1200px, 94%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.gallery__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  border: 2px solid var(--gallery-orange);
+  box-shadow: 4px 4px 0 var(--gallery-orange);
+  color: var(--gallery-orange);
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.gallery__heading {
+  margin: 42px 0 12px;
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+  font-weight: 850;
+}
+
+.gallery__heading span {
+  color: var(--gallery-orange);
+}
+
+.gallery__intro {
+  margin-bottom: 0;
+  color: #a5a7ad;
+}
+
+.gallery__stage {
+  position: relative;
+  height: 440px;
+  margin-top: 48px;
+  perspective: 1200px;
+}
+
+.gallery__card {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  display: block;
+  width: clamp(220px, 25vw, 310px);
+  height: 400px;
+  padding: 0;
+  overflow: hidden;
+
+  border: 1px solid #ffffff20;
+  border-radius: 22px;
+  background: #151515;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+
+  transform: translateX(calc(-50% + var(--position) * 225px))
+    rotate(calc(var(--position) * -3deg))
+    scale(calc(1 - min(abs(var(--position)), 3) * 0.035));
+
+  transform-origin: center;
+  transition:
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 350ms ease,
+    filter 350ms ease,
+    box-shadow 350ms ease;
+
+  z-index: calc(10 - abs(var(--position)));
+  filter: brightness(0.65);
+}
+
+.gallery__card--active {
+  border: 2px solid var(--gallery-orange);
+  border-radius: 22px;
+  transform: translateX(-50%) translateY(-10px) scale(1.04);
+  z-index: 20;
+  filter: brightness(1);
+  box-shadow: 0 18px 50px #0008;
+}
+
+.gallery__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery__card--active .gallery__image {
+  transform: scale(1.045);
+}
+
+.gallery__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #05060808 25%,
+    #05060820 45%,
+    #050608e8 100%
+  );
+  transition: background 350ms ease;
+}
+
+.gallery__category {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  margin: 0;
+  color: var(--gallery-orange);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.gallery__caption {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 78px;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.gallery__card-footer {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 1.2px;
+}
+
+.gallery__card-footer span:last-child {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border: 1px solid #ffffff65;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+.gallery__card--active .gallery__card-footer span:last-child {
+  border-color: var(--gallery-orange);
+  background: var(--gallery-orange);
+  color: #090b0e;
+}
+
+.gallery__card:hover .gallery__card-footer span:last-child {
+  transform: rotate(45deg);
+}
+
+.gallery__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 4px;
+}
+
+.gallery__controls button {
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--gallery-orange);
+  background: transparent;
+  color: var(--gallery-orange);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition:
+    background 200ms ease,
+    color 200ms ease;
+}
+
+.gallery__controls button:hover {
+  background: var(--gallery-orange);
+  color: #090b0e;
+}
+
+.gallery__counter {
+  color: #aaa;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    padding: 52px 0 46px;
+  }
+
+  .gallery__container {
+    width: 100%;
+  }
+
+  .gallery__heading {
+    padding: 0 16px;
+    margin-top: 32px;
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .gallery__intro {
+    padding: 0 22px;
+    font-size: 0.9rem;
+  }
+
+  .gallery__stage {
+    height: 360px;
+    margin-top: 32px;
+    overflow: hidden;
+  }
+
+  .gallery__card {
+    top: 12px;
+    width: min(70vw, 280px);
+    height: 315px;
+
+    transform: translateX(calc(-50% + var(--position) * 76px))
+      rotate(calc(var(--position) * -3deg))
+      scale(calc(1 - min(abs(var(--position)), 3) * 0.04));
+  }
+
+  .gallery__card--active {
+    transform: translateX(-50%) translateY(-4px) scale(1);
+  }
+
+  .gallery__category {
+    top: 16px;
+    left: 16px;
+  }
+
+  .gallery__caption {
+    left: 16px;
+    right: 16px;
+    bottom: 70px;
+    font-size: 1.15rem;
+  }
+
+  .gallery__card-footer {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .gallery__card-footer span:last-child {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery__card,
+  .gallery__image,
+  .gallery__controls button,
+  .gallery__card-footer span:last-child {
+    transition: none !important;
+  }
+}
+
+
+.gallery__caption {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
+}
+
+.gallery__card--active .gallery__caption {
+  -webkit-line-clamp: 2;
+  overflow-wrap: normal;
+}
+
+.gallery__card--active {
+  overflow: hidden;
+}
+
