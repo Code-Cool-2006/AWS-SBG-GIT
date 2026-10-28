@@ -7,6 +7,7 @@ const QUICK_LINKS = [
   { label: 'Home', href: '#hero' },
   { label: 'About the Community', href: '#about' },
   { label: 'Events & Workshops', href: '#events' },
+  { label: 'Gallery', href: '#gallery' },
   { label: 'Featured Projects', href: '#projects' },
   { label: 'Learning Resources', href: '#learning' },
   { label: 'Core Team', href: '#team' },
