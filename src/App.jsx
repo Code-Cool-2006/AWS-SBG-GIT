@@ -131,15 +131,87 @@ export default function App() {
           <div className="container">
             <div className="placeholder-card">
               <div className="placeholder-card__icon" aria-hidden="true">
+                <CalendarIcon />
+              </div>
+              <span className="placeholder-card__badge">Feature In Progress</span>
+              <h3 className="placeholder-card__title">Events &amp; Workshops</h3>
+              <p className="placeholder-card__desc">
+                Upcoming hands-on workshops, cloud bootcamps, and technical sessions at
+                KLS GIT are currently being scheduled. Event listings and registration
+                workflows will be available here soon.
+              </p>
+              <div className="placeholder-card__tagline">
+                Module component slot: src/components/Events
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Module Slot */}
+        <section
+          id="projects"
+          className="section-placeholder"
+          aria-label="Student Projects section"
+        >
+          <div className="container">
+            <div className="placeholder-card">
+              <div className="placeholder-card__icon" aria-hidden="true">
+                <CodeIcon />
+              </div>
+              <span className="placeholder-card__badge">Feature In Progress</span>
+              <h3 className="placeholder-card__title">Featured Student Projects</h3>
+              <p className="placeholder-card__desc">
+                Showcasing innovative cloud architectures, serverless prototypes, AI
+                integrations, and open-source tools developed by student builders at KLS
+                Gogte Institute of Technology.
+              </p>
+              <div className="placeholder-card__tagline">
+                Module component slot: src/components/Projects
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Learning Resources Module Slot */}
+        <section
+          id="learning"
+          className="section-placeholder section-placeholder--dark"
+          aria-label="Learning Resources section"
+        >
+          <div className="container">
+            <div className="placeholder-card">
+              <div className="placeholder-card__icon" aria-hidden="true">
+                <BookOpenIcon />
+              </div>
+              <span className="placeholder-card__badge">Feature In Progress</span>
+              <h3 className="placeholder-card__title">Learning Resources</h3>
+              <p className="placeholder-card__desc">
+                Curated learning paths, AWS certification roadmaps, official whitepapers,
+                and hands-on lab guides for students starting their cloud journey.
+              </p>
+              <div className="placeholder-card__tagline">
+                Module component slot: src/components/Learning
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Core Team Module Slot */}
+        <section
+          id="team"
+          className="section-placeholder"
+          aria-label="Core Team Directory section"
+        >
+          <div className="container">
+            <div className="placeholder-card">
+              <div className="placeholder-card__icon" aria-hidden="true">
                 <UsersIcon />
               </div>
-              <span className="placeholder-card__badge">
-                Feature In Progress
-              </span>
+              <span className="placeholder-card__badge">Feature In Progress</span>
               <h3 className="placeholder-card__title">Core Team Directory</h3>
               <p className="placeholder-card__desc">
-                Meet the faculty coordinator and student leaders driving the AWS
-                Student Builder Group at KLS GIT.
+                Meet the faculty coordinator and student leaders driving the AWS Student
+                Builder Group at KLS GIT.
               </p>
               <div className="placeholder-card__tagline">
                 Module component slot: src/components/Team
