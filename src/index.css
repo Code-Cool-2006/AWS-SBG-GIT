@@ -35,18 +35,18 @@
   --slate-800: #1e293b;
   --slate-900: #0f172a;
 
-  /* Semantic tokens */
-  --bg-primary: var(--slate-50);
-  --bg-secondary: #ffffff;
-  --bg-dark: var(--navy-900);
-  --bg-dark-card: var(--navy-800);
-  --text-primary: var(--slate-800);
-  --text-secondary: var(--slate-600);
-  --text-muted: var(--slate-400);
-  --text-on-dark: rgba(255, 255, 255, 0.92);
-  --text-on-dark-muted: rgba(255, 255, 255, 0.6);
-  --border-light: var(--slate-200);
-  --border-card: var(--slate-200);
+  /* Semantic tokens: Unified AWS Dark Space Theme */
+  --bg-primary: #090D16;
+  --bg-secondary: #0E172A;
+  --bg-dark: #050D1A;
+  --bg-dark-card: #0F1F38;
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.72);
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --text-on-dark: rgba(255, 255, 255, 0.95);
+  --text-on-dark-muted: rgba(255, 255, 255, 0.65);
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-card: rgba(255, 255, 255, 0.1);
   --accent-primary: var(--orange-500);
   --accent-secondary: var(--blue-500);
 

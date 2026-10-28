@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
+import { AwsLogoImg } from '../common/AwsIcons'
 import './Navbar.css'
 
 const NAV_LINKS = [
@@ -98,12 +99,16 @@ export default function Navbar() {
             handleNavClick('#hero')
           }}
         >
-          <span className="navbar__brand-icon" aria-hidden="true">
-            <CloudIcon />
-          </span>
+          <div className="navbar__brand-logo-wrap">
+            <AwsLogoImg width={48} white={true} />
+          </div>
           <span className="navbar__brand-text">
-            <span className="navbar__brand-main">AWS SBG</span>
-            <span className="navbar__brand-sub">KLS GIT</span>
+            <span className="navbar__brand-main">
+              Student Builder Group
+            </span>
+            <span className="navbar__brand-sub">
+              KLS GOGTE INSTITUTE OF TECHNOLOGY
+            </span>
           </span>
         </a>
 
@@ -207,16 +212,5 @@ export default function Navbar() {
         </nav>
       </div>
     </header>
-  )
-}
-
-function CloudIcon() {
-  return (
-    <svg width="24" height="18" viewBox="0 0 26 20" fill="none" aria-hidden="true">
-      <path
-        d="M20.5 8.5a5 5 0 0 0-9.7-1.5A4 4 0 1 0 10.5 15H20a3.5 3.5 0 0 0 .5-7z"
-        fill="currentColor"
-      />
-    </svg>
   )
 }

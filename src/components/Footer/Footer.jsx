@@ -1,4 +1,5 @@
 import { siteConfig } from '../../data/config'
+import { AwsLogoImg } from '../common/AwsIcons'
 import './Footer.css'
 
 const currentYear = new Date().getFullYear()
@@ -27,13 +28,8 @@ export default function Footer() {
           {/* Brand info */}
           <div className="footer__brand">
             <div className="footer__brand-logo">
-              <div className="footer__cloud-icon" aria-hidden="true">
-                <svg width="22" height="16" viewBox="0 0 26 20" fill="none">
-                  <path
-                    d="M20.5 8.5a5 5 0 0 0-9.7-1.5A4 4 0 1 0 10.5 15H20a3.5 3.5 0 0 0 .5-7z"
-                    fill="currentColor"
-                  />
-                </svg>
+              <div className="footer__brand-logo-wrap" aria-hidden="true">
+                <AwsLogoImg width={52} white={true} />
               </div>
               <div>
                 <div className="footer__brand-name">{siteConfig.clubName}</div>
